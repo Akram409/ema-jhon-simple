@@ -2,26 +2,30 @@ import React from "react";
 import "./Product.css";
 
 const Product = (props) => {
+  // console.log(props)
   const { img, name, price, quantity, seller, ratings } = props.product;
+  const handleAddToCart = props.handleAddToCart
+  // console.log(handleAddToCart)
   const len = {
-    height: "700px",
+    height: "650px",
   };
   return (
-    <div className="relative">
-      <div style={len} className="card w-96 bg-base-100 shadow-xl">
+    <div>
+      <div style={len} className="card w-85 bg-base-100 shadow-xl">
         <figure>
           <img src={img} alt="Shoes" />
         </figure>
         <div className="card-body pb-0">
           <h1 className="card-title text-xl">{name}</h1>
           <h2>Price: ${price}</h2>
-          <div className="card mt-10">
+          <div className="card mt-5">
             <h4>Manufacturer: {seller}</h4>
             <h4>Rating: {ratings} star</h4>
           </div>
         </div>
       </div>
-      <button className="btn w-full bg-amber-200 text-black  hover:text-white absolute bottom-0">
+      <div className="relative">
+      <button onClick={() => handleAddToCart(props.product)} className="btn w-96 bg-amber-200 text-black  hover:text-white absolute bottom-0">
               Add to Cart
               <span className="ml-1">
                 <svg
@@ -39,7 +43,8 @@ const Product = (props) => {
                   />
                 </svg>
               </span>
-            </button>
+        </button>
+      </div>
     </div>
   );
 };
