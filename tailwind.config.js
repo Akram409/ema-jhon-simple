@@ -5,7 +5,7 @@ export default {
     themes: [
       {
         mytheme: {
-          primary: "#661AE6",
+          primary: "#ffff",
 
           secondary: "#D926AA",
 
@@ -13,7 +13,7 @@ export default {
 
           neutral: "#191D24",
 
-          "base-100": "#2A303C",
+          "base-100": "#fff",
 
           info: "#3ABFF8",
 
@@ -22,6 +22,10 @@ export default {
           warning: "#FBBD23",
 
           error: "#F87272",
+
+          black: "#1C2B35",
+
+          btn: "#FFE0B3",
         },
       },
     ],
