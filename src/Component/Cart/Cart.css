@@ -1,0 +1,9 @@
+.Cart{
+    background-color: rgba(255, 153, 0, 0.3);;
+}
+.Cart-Info{
+    color: #2A414F;
+}
+.Cart-Info p{
+    margin: 30px 0;
+}

@@ -26,6 +26,7 @@ export default {
           black: "#1C2B35",
 
           btn: "#FFE0B3",
+          CartColor: "#FF9900",
         },
       },
     ],

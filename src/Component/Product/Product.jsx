@@ -10,8 +10,8 @@ const Product = (props) => {
     height: "650px",
   };
   return (
-    <div>
-      <div style={len} className="card w-85 bg-base-100 shadow-xl">
+    <div className="">
+      <div style={len} className="card w-80 bg-base-100 shadow-xl ml-5">
         <figure>
           <img src={img} alt="Shoes" />
         </figure>
@@ -24,8 +24,8 @@ const Product = (props) => {
           </div>
         </div>
       </div>
-      <div className="relative">
-      <button onClick={() => handleAddToCart(props.product)} className="btn w-96 bg-amber-200 text-black  hover:text-white absolute bottom-0">
+      <div className="relative ml-5">
+      <button onClick={() => handleAddToCart(props.product)} className="btn w-80 bg-amber-200 text-black  hover:text-white absolute bottom-0">
               Add to Cart
               <span className="ml-1">
                 <svg
