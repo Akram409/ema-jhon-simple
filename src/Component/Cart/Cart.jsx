@@ -7,12 +7,11 @@ const Cart = (props) => {
   let totalShipping = 0;
   let totalTax = 0;
   let GrandTotal = 0;
-  for (const product of cart)
-  {
-    totalPrice = totalPrice + product.price
-    totalShipping = totalShipping + product.shipping
+  for (const product of cart) {
+    totalPrice = totalPrice + product.price;
+    totalShipping = totalShipping + product.shipping;
   }
-  totalTax = totalPrice * 7 / 100;
+  totalTax = (totalPrice * 7) / 100;
   GrandTotal = totalPrice + totalShipping + totalTax;
 
   return (
@@ -26,7 +25,9 @@ const Cart = (props) => {
           <p>Total Price: ${totalPrice}</p>
           <p>Total Shipping Charge: ${totalShipping}</p>
           <p>Tax: ${totalTax}</p>
-          <h2 className="font-bold text-2xl py-7">Grand Total: ${GrandTotal}</h2>
+          <h2 className="font-bold text-2xl py-7">
+            Grand Total: ${GrandTotal}
+          </h2>
         </div>
       </div>
     </div>
