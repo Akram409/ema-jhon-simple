@@ -1,5 +1,6 @@
 import React from "react"
 import logo from '../../images/Logo.svg'
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -11,16 +12,19 @@ const Navbar = () => {
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1 text-white hover:text-blue-400">
             <li>
-              <a href="/">Order</a>
+              <Link to="/">Shop</Link>
             </li>
             <li>
-              <a href="/">Order Review</a>
+              <Link to="/order">Order</Link>
             </li>
             <li>
-              <a href="/">Manage Inventory</a>
+              <Link to="/orderReview">Order Review</Link>
             </li>
             <li>
-              <a href="/">Login</a>
+              <Link to="/ManageInventory">Manage Inventory</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
             </li>
           </ul>
         </div>

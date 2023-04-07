@@ -2,13 +2,14 @@ import React from "react";
 import "./Product.css";
 
 const Product = (props) => {
-  // console.log(props)
+
   const { img, name, price, quantity, seller, ratings } = props.product;
   const handleAddToCart = props.handleAddToCart
-  // console.log(handleAddToCart)
+
   const len = {
     height: "650px",
   };
+  
   return (
     <div className="">
       <div style={len} className="card w-80 bg-base-100 shadow-xl ml-5">

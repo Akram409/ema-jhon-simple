@@ -18,22 +18,22 @@ const Shop = () => {
         loadData()
     },[])
 
-    useEffect(() => {
-        const storedCart = getShoppingCart()
-        const savedCart = [];
-        for(const id in storedCart)
-        {
-            const addProduct = product.find(products => products.id === id)
-            if(addProduct)
-            {
-                const quantity = storedCart[id]
-                addProduct.quantity = quantity
-                savedCart.push(addProduct)
-            }
-        }
-        setCart(savedCart)
+    // useEffect(() => {
+    //     const storedCart = getShoppingCart()
+    //     const savedCart = [];
+    //     for(const id in storedCart)
+    //     {
+    //         const addProduct = product.find(products => products.id === id)
+    //         if(addProduct)
+    //         {
+    //             const quantity = storedCart[id]
+    //             addProduct.quantity = quantity
+    //             savedCart.push(addProduct)
+    //         }
+    //     }
+    //     setCart(savedCart)
 
-    },[product])
+    // },[product])
 
     const handleAddToCart = (item) =>{
         /// Type - 3
@@ -53,7 +53,7 @@ const Shop = () => {
         }
         // const newCart = [...cart,item]
         setCart(newCart)
-        addToDb(item.id)
+        // addToDb(item.id)
     }
     return (
         <div className='All_product'>
