@@ -2,3 +2,6 @@
     display: grid;
     grid-template-columns: 4fr 1fr;
 }
+.Order-item{
+    margin: 50px auto;
+}   
