@@ -32,10 +32,10 @@ const router = createBrowserRouter([
         path: '/orderReview',
         element: <Review></Review>,
       },
-      {
-        path: '/ManageInventory',
-        element: <Inventory></Inventory>,
-      },
+      // {
+      //   path: '/ManageInventory',
+      //   element: <Inventory></Inventory>,
+      // },
       {
         path: '/login',
         element: <Login></Login>,
