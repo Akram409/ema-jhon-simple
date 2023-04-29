@@ -33,7 +33,7 @@ const Order = () => {
       <div className="cart-container">
         <Cart cart={cart} handleClearCart={handleClearCart}>
         <div>
-          <Link to="/">
+          <Link to="/checkout">
             <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg Cart-btn flex justify-center items-center mx-auto my-4 bg-orange-400 w-10/12 proceed-btn">
               <span className="text-white">Proceed Checkout</span>
               <svg
