@@ -1,19 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Shop from './Component/Shop/Shop';
-import Home from './Component/Home/Home';
-import Order from './Component/Order/Order'
-import Review from './Component/Review/Review'
-import Inventory from './Component/Inventory/Inventory'
-import Login from './Component/Login/Login'
-import cartProductsLoaders from './Component/loaders/cartProductsLoaders';
-import Checkout from './Component/Checkout/Checkout';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Shop from "./Component/Shop/Shop";
+import Home from "./Component/Home/Home";
+import Order from "./Component/Order/Order";
+import Review from "./Component/Review/Review";
+import Inventory from "./Component/Inventory/Inventory";
+import Login from "./Component/Login/Login";
+import cartProductsLoaders from "./Component/loaders/cartProductsLoaders";
+import Checkout from "./Component/Checkout/Checkout";
+import SignUp from "./Component/SignUp/SignUp";
+import AuthProvider from "./Component/AuthProvider/AuthProvider";
+import PrivateRoute from "./routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -21,36 +21,38 @@ const router = createBrowserRouter([
     element: <Home></Home>,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Shop></Shop>,
       },
       {
-        path: '/order',
+        path: "/order",
         element: <Order></Order>,
-        loader: cartProductsLoaders
+        loader: cartProductsLoaders,
       },
       {
-        path: '/orderReview',
+        path: "/orderReview",
         element: <Review></Review>,
       },
       {
-        path: '/checkout',
-        element: <Checkout></Checkout>,
+        path: "/checkout",
+        element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
       },
-      // {
-      //   path: '/ManageInventory',
-      //   element: <Inventory></Inventory>,
-      // },
       {
-        path: '/login',
+        path: "/login",
         element: <Login></Login>,
       },
-    ]
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+    ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </React.StrictMode>
+);
